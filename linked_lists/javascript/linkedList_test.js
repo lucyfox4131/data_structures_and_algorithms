@@ -119,7 +119,7 @@ describe('LinkedList', function() {
     });
 
     context('with multiple elements', function(){
-      it.skip('should return the last element from the list', function(){
+      it('should return the last element from the list', function(){
         list.push("hello");
         list.push("new");
         list.push("world");
@@ -129,7 +129,7 @@ describe('LinkedList', function() {
         expect(output.data).to.eq('today');
       });
 
-      it.skip('should remove the last element from the list', function(){
+      it('should remove the last element from the list', function(){
         list.push("hello");
         list.push("world");
         list.push("today");
@@ -153,14 +153,14 @@ describe('LinkedList', function() {
 
   describe('.delete', function(){
     context('with one node', function(){
-      it.skip('deletes a solo node', function(){
+      it('deletes a solo node', function(){
         list.push('hello');
         list.delete('hello');
         expect(list._length).to.eq(0);
         expect(list.head).to.eq(null);
       });
 
-      it.skip('does not perform a delete when a node does not match', function(){
+      it('does not perform a delete when a node does not match', function(){
         list.push('hello');
         list.delete('goodbye');
         expect(list._length).to.eq(1);
