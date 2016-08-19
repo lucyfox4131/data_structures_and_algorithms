@@ -20,7 +20,14 @@ List.prototype.push = function (data) {
 };
 
 List.prototype.pop = function () {
-  return null;
+  if (this._length === 0){
+    return null;
+  } else if (this._length === 1){
+    var headNode = this.head;
+    this.head = null;
+    this._length = 0;
+    return headNode;
+  }
 };
 
 function findFinalNode(currentNode){
