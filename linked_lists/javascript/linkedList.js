@@ -93,3 +93,28 @@ function deleteNode(list, nodeWithData, parentNode){
   parentNode.nextNode = newChildNode;
   list._length -= 1;
 }
+
+List.prototype.toArray = function () {
+  var array = []
+};
+
+List.prototype.lastNode = function () {
+  if( this._length !== 0){
+    return findFinalNode(this.head)
+  }else{
+    return null
+  }
+};
+
+List.prototype.include = function (data) {
+  if(this._length !== 0){
+    return findNodeWithData(this.head, data) ? true : false
+  }
+};
+
+List.prototype.find = function (data) {
+  if(this._length !== 0){
+    var node = findNodeWithData(this.head, data)
+    return node ? node : null
+  }
+};

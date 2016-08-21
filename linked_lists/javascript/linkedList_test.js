@@ -232,7 +232,7 @@ describe('LinkedList', function() {
         list.push('Spain');
       });
 
-      it.skip('finds the last node', function(){
+      it('finds the last node', function(){
         expect(list.lastNode().data).to.eq('Spain');
       });
     });
@@ -242,13 +242,13 @@ describe('LinkedList', function() {
         list.push('Ahoy!');
       });
 
-      it.skip('finds the only node', function(){
+      it('finds the only node', function(){
         expect(list.lastNode().data).to.eq('Ahoy!');
       });
     });
 
     context('with no nodes', function(){
-      it.skip('returns null', function(){
+      it('returns null', function(){
         expect(list.lastNode()).to.eq(null);
       });
     });
@@ -262,11 +262,11 @@ describe('LinkedList', function() {
       list.push('Spain');
     });
 
-    it.skip('should return true if node is in list', function(){
+    it('should return true if node is in list', function(){
       expect(list.include("rain")).to.eq(true);
     });
 
-    it.skip('should return false if node is not in list', function(){
+    it('should return false if node is not in list', function(){
       expect(list.include("nope")).to.eq(false);
     });
   });
@@ -278,13 +278,13 @@ describe('LinkedList', function() {
       list.push('world');
     });
 
-    it.skip('should return true the node if node in list', function(){
+    it('should return true the node if node in list', function(){
       var result = list.find("hello");
       expect(result.data).to.eq('hello');
       expect(result.nextNode.data).to.eq('world');
     });
 
-    it.skip('should return null if node is missing', function(){
+    it('should return null if node is missing', function(){
       var result = list.find("nope");
       expect(result).to.eq(null);
     });
