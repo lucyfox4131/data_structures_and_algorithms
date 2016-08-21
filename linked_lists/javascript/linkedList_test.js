@@ -177,7 +177,7 @@ describe('LinkedList', function() {
         list.push('friend');
       });
 
-      it.skip('changes the list _.length', function(){
+      it('changes the list _.length', function(){
         expect(list.head.nextNode.data).to.eq('darkness');
         expect(list._length).to.eq(5);
         list.delete('friend');
@@ -188,13 +188,13 @@ describe('LinkedList', function() {
         expect(list._length).to.eq(3);
       });
 
-      it.skip('resets the nextNode property on the node before the deleted node', function(){
+      it('resets the nextNode property on the node before the deleted node', function(){
         expect(list.head.nextNode.data).to.eq('darkness');
         list.delete('darkness');
         expect(list.head.nextNode.data).to.eq('my');
       });
 
-      it.skip('resets the list.head if deleting the first node', function(){
+      it('resets the list.head if deleting the first node', function(){
         expect(list.head.data).to.eq('hello');
         list.delete('hello');
         expect(list.head.data).to.eq('darkness');

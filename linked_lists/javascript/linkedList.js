@@ -53,17 +53,20 @@ function findSecondToLast(currentNode){
 };
 
 List.prototype.delete = function (data) {
-  // var node = findNodeWithData(this.head, data)
   if (this._length === 1 && this.head.data === data){
     this.head = null;
     this._length = 0;
-    // I want to delete this node, if it has a child node, then I want it's parent node to have
-    //the new child node be the current nodes child. else I'm basically just popping one off the end (can call)
-    //that function again.
-    //maybe have if case for only one length? That kind of makes sense to handle separately at first
+  }else if(this.head.data === data){
+    this.head = this.head.nextNode;
+    this._length -= 1;
+  }else{
+    var node = findNodeWithData(this.head, data)
+    if (node){
+      var parent = findParentNode(this.head, data)
+      deleteNode(this, node, parent)
+    }
   }
 };
-
 
 function findNodeWithData(currentNode, data){
   if (currentNode.data === data){
@@ -73,4 +76,20 @@ function findNodeWithData(currentNode, data){
   } else {
     return findNodeWithData(currentNode.nextNode, data)
   }
+}
+
+function findParentNode(currentNode, data){
+  if (currentNode.nextNode.data === data){
+    return currentNode
+  }else if(currentNode.nextNode === null){
+    return null
+  }else{
+    return findParentNode(currentNode.nextNode, data)
+  }
+}
+
+function deleteNode(list, nodeWithData, parentNode){
+  var newChildNode = nodeWithData.nextNode;
+  parentNode.nextNode = newChildNode;
+  list._length -= 1;
 }
