@@ -60,10 +60,36 @@ function findNode(num, currentNode){
 }
 
 BST.prototype.toArray = function () {
-  return []
-  // starting with the left side, return root, then left untill you get down to the bottom,
-  // then return all from the right side till you get to the bottom
+  var result = []
+  if(this.rootNode){
+    addLeftSideValues(result, this.rootNode)
+    addRightSideValues(result, this.rootNode.right)
+    return result
+  }else{
+    return result
+  }
 };
+
+function addLeftSideValues(array, currentNode){
+  array.push(currentNode.data)
+  if(currentNode.left != null){
+    return addLeftSideValues(array, currentNode.left)
+  }else if(currentNode.right != null){
+    return addLeftSideValues(array, currentNode.right)
+  }else if (currentNode.left === null && currentNode.right === null){
+    return array
+  }
+}
+
+function addRightSideValues(array, currentNode){
+  array.push(currentNode.data)
+  if(currentNode.right != null){
+    return addRightSideValues(array, currentNode.right)
+  }else if(currentNode.left){
+    return addRightSideValues(array, currentNode.left)
+  }
+  return array
+}
 
 BST.prototype.min = function () {
   if(!this.rootNode){

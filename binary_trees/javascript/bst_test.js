@@ -227,7 +227,7 @@ describe('BST', function() {
     });
 
     context('with nodes', function(){
-      xit('pulls data from the tree into an array, starting with the left branches of the tree', function(){
+      it('pulls data from the tree into an array, starting with the left branches of the tree', function(){
         tree.push(5);
         tree.push(4);
         tree.push(6);
