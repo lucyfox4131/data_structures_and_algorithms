@@ -122,3 +122,27 @@ function findMax(node){
     return node.data
   }
 }
+
+BST.prototype.sort = function () {
+  var result = [];
+  result = sortArray(this.toArray(), result);
+  return result;
+};
+
+
+function sortArray(arrayToSort, result){
+  for(var i = 0; i < arrayToSort.length; i++){
+    if(result.length === 0){
+      result.push(arrayToSort[i])
+    }else{
+      debugger; //This is causing problems, infinte loop or something...not hitting debugger last checked
+      var num = arrayToSort[i]
+      for(var i = 0; i < result.length; i++){
+        if(num < result[i]){
+          result.splice(i, 0, num)
+        }
+      }
+    }
+  }
+  return result
+}

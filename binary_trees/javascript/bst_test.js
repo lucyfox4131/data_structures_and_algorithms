@@ -240,13 +240,13 @@ describe('BST', function() {
 
   describe('.sort', function(){
     context('with an empty tree', function(){
-      xit('returns an empty array', function(){
+      it('returns an empty array', function(){
         expect(tree.sort()).to.deep.eq([]);
       });
     });
 
     context('with nodes', function(){
-      xit('returns a sorted array of tree elements', function(){
+      it('returns a sorted array of tree elements', function(){
         tree.push(5)
         tree.push(4)
         tree.push(6)
