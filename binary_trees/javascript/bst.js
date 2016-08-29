@@ -124,25 +124,33 @@ function findMax(node){
 }
 
 BST.prototype.sort = function () {
-  var result = [];
-  result = sortArray(this.toArray(), result);
+  var result = sortArray(this.toArray(), []);
   return result;
 };
 
-
 function sortArray(arrayToSort, result){
   for(var i = 0; i < arrayToSort.length; i++){
-    if(result.length === 0){
+    if (result.length === 0){
       result.push(arrayToSort[i])
-    }else{
-      debugger; //This is causing problems, infinte loop or something...not hitting debugger last checked
+    } else{
       var num = arrayToSort[i]
-      for(var i = 0; i < result.length; i++){
-        if(num < result[i]){
-          result.splice(i, 0, num)
-        }
+      var index = firstLesserNum(result, num)
+      if(index != null){
+        result.splice(index, 0, num)
+      } else{
+        result.push(arrayToSort[i])
       }
     }
   }
   return result
+}
+
+function firstLesserNum(result, num) {
+  for(var j = 0; j < result.length; j++){
+    if(result[j] > num){
+      return j;
+    } else {
+      return null
+    }
+  }
 }
