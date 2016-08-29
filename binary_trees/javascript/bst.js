@@ -154,3 +154,18 @@ function firstLesserNum(result, num) {
     }
   }
 }
+
+BST.prototype.postOrdered = function () {
+  var result = [];
+  if(this.rootNode){
+    addPostOrdered(this.rootNode, result)
+  };
+  return result;
+};
+
+
+function addPostOrdered(currentNode, result){
+  result.unshift(currentNode.data)
+  if(currentNode.right) addPostOrdered(currentNode.right, result);
+  if(currentNode.left) addPostOrdered(currentNode.left, result)
+}

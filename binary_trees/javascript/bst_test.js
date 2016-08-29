@@ -306,7 +306,7 @@ describe('BST', function() {
 
   describe('.postOrdered', function(){
     context('with an empty tree', function(){
-      xit('returns an empty array', function(){
+      it('returns an empty array', function(){
         expect(tree.postOrdered()).to.deep.eq([]);
       });
     });
@@ -321,7 +321,7 @@ describe('BST', function() {
       //   / \
       //  1   3
       // should produce post_ordered output [1,3,2,5,4]
-      xit('should give back elements in post-order', function(){
+      it('should give back elements in post-order', function(){
         tree.push(4);
         tree.push(2);
         tree.push(5);
