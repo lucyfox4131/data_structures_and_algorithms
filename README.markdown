@@ -1,3 +1,5 @@
+# Forked from the Turing School Data Structures and Algorithms repo I am using this to improve my JavaScript skills
+
 ## Data Structures & Algorithms
 
 In the process of becoming or practicing as a web application developer, it's easy to lose sight of Computer Science.
@@ -6,12 +8,12 @@ This collection of exercises and experiments seeks to help you build an understa
 
 ### Included Topics
 
-* binary trees
+* binary trees**
 * pathfinding algorithms
 * luhn algorithm (checksumming)
 * tries
 * graphs
-* linked lists
+* linked lists**
 * bloom filters
 
 #### To-Do / Would like to cover
@@ -22,3 +24,5 @@ This collection of exercises and experiments seeks to help you build an understa
 * Persistent Data Structures
 * Tries (more detail)
 * Hashing algorithm implementation (maybe start with MurmurHash?)
+
+**These are Completed or In Progress
