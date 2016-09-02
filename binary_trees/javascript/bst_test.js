@@ -247,13 +247,13 @@ describe('BST', function() {
 
     context('with nodes', function(){
       it('returns a sorted array of tree elements', function(){
-        tree.push(5)
-        tree.push(4)
-        tree.push(6)
-        tree.push(7)
-        tree.push(3)
-        tree.push(2)
-        tree.push(2102)
+        tree.push(5);
+        tree.push(4);
+        tree.push(6);
+        tree.push(7);
+        tree.push(3);
+        tree.push(2);
+        tree.push(2102);
         expect(tree.sort()).to.deep.eq([2,3,4,5,6,7,2102]);
       });
     });

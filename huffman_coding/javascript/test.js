@@ -29,7 +29,7 @@ describe('compression', function() {
     it('has a count equal to the sum of the counts of its leaves', function() {
       var node = new Node(new Leaf("!", 1), new Leaf("@", 2));
       assert.equal(node.count, 3);
-    })
+    });
 
     it('returns itself as an object', function() {
       var leftLeaf = new Leaf("J", 1);
@@ -42,7 +42,7 @@ describe('compression', function() {
 
   context('rootNode', function() {
     it('has a count equal to the message length', function() {
-      assert.equal(encoder.root.count, message.length)
+      assert.equal(encoder.root.count, message.length);
     });
 
     it('has children that know about their parents', function() {
@@ -64,7 +64,7 @@ describe('compression', function() {
       var numCharacters = _.uniq(message.split("")).length;
       assert.equal(numCharacters, encoder.leaves.length);
       encoder.leaves.forEach(function(leaf) {
-        assert.instanceOf(leaf, Leaf)
+        assert.instanceOf(leaf, Leaf);
       });
 
     });
@@ -81,7 +81,7 @@ describe('compression', function() {
     });
 
     it('can tell me the compressed bitstring', function() {
-      var compressed = "100001000111110000110001110111001011010010010010111010011110011100001100011101111110001101001111101011011011000100011110000111010111010111"
+      var compressed = "100001000111110000110001110111001011010010010010111010011110011100001100011101111110001101001111101011011011000100011110000111010111010111";
       assert.equal(encoder.compressedBitstring, compressed);
     });
 
@@ -89,7 +89,7 @@ describe('compression', function() {
 
   context("decoding", function() {
     context("challenge 1", function() {
-      it.skip('can decode a compressed message', function() {
+      it('can decode a compressed message', function() {
         var decodedMessage = encoder.decode(encoder.compressedBitstring);
         assert.equal(decodedMessage, message);
       });
@@ -103,12 +103,11 @@ describe('compression', function() {
     });
 
     context("batman challenge", function() {
-      it.skip('can decode from only a compressed bitstring and a tree where the nodes have lost their parents', function() {
+      it('can decode from only a compressed bitstring and a tree where the nodes have lost their parents', function() {
         encoder.root.unsetParents();
         var decoder = new Decoder(encoder.compressedBitstring, encoder.root);
         assert.equal(decoder.message(), decoder.message());
       });
     });
-
   });
 });
